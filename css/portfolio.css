@@ -68,7 +68,6 @@
 .project-list {
   display: flex;
   flex-wrap: wrap;
-  position: relative;
 }
 
 .project-list .elements {
@@ -87,12 +86,8 @@
 }
 
 .elements .elements-content {
-  padding: 20px 24px;
-}
-
-.elements .elements-content p {
   margin: 0;
-  padding: 0;
+  padding: 20px 24px;
   color: var(--secondary-text-color);
   font-size: 16px;
   line-height: 30px;
@@ -109,14 +104,13 @@
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
-.elements {
+.project-thumb {
   position: relative;
+  overflow: hidden;
 }
-.project-content::before {
-  display: inline-block;
-  content: '';
+.project-content {
   position: absolute;
-  width: 370px;
+  width: 100%;
   height: 294px;
   top: 0;
   left: 0;
@@ -124,8 +118,17 @@
   background: rgba(33, 150, 243, 0.9);
 
   opacity: 0;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-content:hover::before {
+.elements:hover .project-content {
+  transform: translateY(0);
   opacity: 1;
+}
+.project-content-text {
+  margin: 0;
+  padding: 63px 24px;
+  color: var(--primary-white-color);
 }
