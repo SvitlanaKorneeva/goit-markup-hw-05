@@ -68,6 +68,7 @@
 .project-list {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .project-list .elements {
@@ -106,4 +107,25 @@
 .elements:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.elements {
+  position: relative;
+}
+.project-content::before {
+  display: inline-block;
+  content: '';
+  position: absolute;
+  width: 370px;
+  height: 294px;
+  top: 0;
+  left: 0;
+
+  background: rgba(33, 150, 243, 0.9);
+
+  opacity: 0;
+}
+
+.project-content:hover::before {
+  opacity: 1;
 }
