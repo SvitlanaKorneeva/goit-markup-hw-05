@@ -113,7 +113,7 @@
 .project-content {
   position: absolute;
   width: 100%;
-  height: 294px;
+  height: 100%;
   top: 0;
   left: 0;
 
@@ -133,4 +133,8 @@
   margin: 0;
   padding: 63px 24px;
   color: var(--primary-white-color);
+
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
 }
